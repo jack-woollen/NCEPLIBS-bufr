@@ -61,6 +61,8 @@ C>                           DICTIONARY TABLE NUMBER ASSOCIATED WITH
 C>                           EACH SUBSET IN INTERNAL MEMORY
 C> 2012-03-02  J. ATOR    -- USE FUNCTION UPS
 C> 2014-12-10  J. ATOR    -- USE MODULES INSTEAD OF COMMON BLOCKS
+C> 2022-05-06  J. WOOLLEN -- REPLACE UPBB WITH UPB8 FOR 8BYTE INTEGERS
+C>                           AND ADD INT STATEMENT FUNCTION 
 C>
 C> USAGE:    CALL UFBTAM (TAB, I1, I2, IRET, STR)
 C>   INPUT ARGUMENT LIST:
@@ -97,7 +99,7 @@ C>    MESSAGES INTO INTERNAL MEMORY.
 C>
 C>    THIS ROUTINE CALLS:        BORT     ERRWRT   NMSUB    PARSTR
 C>                               RDMEMM   STATUS   STRING   UPB
-C>                               UPBB     UPC      UPS      USRTPL
+C>                               UPB8     UPC      UPS      USRTPL
 C>    THIS ROUTINE IS CALLED BY: None
 C>                               Normally called only by application
 C>                               programs.
@@ -188,7 +190,7 @@ C  ---------------------------------------------
             MBIT = MBIT+NBIT
             NBIT = IBT(NODE)
             IF(ITP(NODE).EQ.1) THEN
-               CALL UPBB(IVAL,NBIT,MBIT,MBAY(1,LUN))
+               CALL UPB8(IVAL,NBIT,MBIT,MBAY(1,LUN))
                CALL USRTPL(LUN,N,INT(IVAL))
             ENDIF
             DO I=1,NNOD

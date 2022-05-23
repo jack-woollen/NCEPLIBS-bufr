@@ -5,6 +5,8 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/sinv.f90.in ${CMAKE_CURRENT_BINARY_DI
 list(APPEND _utils_srcs
   binv.f90
   cmpbqm.f90
+  t29inv.f90
+  typinv.f90
   ${CMAKE_CURRENT_BINARY_DIR}/sinv.f90
   gettab.f90
   readbp.f90

@@ -30,6 +30,7 @@ C> 2012-06-04  J. ATOR    -- SET DECODED REAL*8 VALUE TO "MISSING" WHEN
 C>                           CORRESPONDING CHARACTER FIELD HAS ALL BITS
 C>                           SET TO 1
 C> 2014-12-10  J. ATOR    -- USE MODULES INSTEAD OF COMMON BLOCKS
+C> 2022-05-06  J. WOOLLEN -- USE UP8 FOR 8BYTE INTEGER OPERATION 
 C>
 C> USAGE:    CALL RDCMPS (LUN)
 C>   INPUT ARGUMENT LIST:
@@ -37,7 +38,7 @@ C>     LUN      - INTEGER: I/O STREAM INDEX INTO INTERNAL MEMORY ARRAYS
 C>
 C> REMARKS:
 C>    THIS ROUTINE CALLS:        BORT     ICBFMS   IGETRFEL STRBTM
-C>                               UPB      UPC      UPS      USRTPL
+C>                               UPB      UP8      UPC      UPS      USRTPL
 C>    THIS ROUTINE IS CALLED BY: READSB
 C>                               Normally not called by any application
 C>                               programs.

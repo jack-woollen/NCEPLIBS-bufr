@@ -36,6 +36,7 @@ C>                           SET TO 1
 C> 2014-12-10  J. ATOR    -- USE MODULES INSTEAD OF COMMON BLOCKS
 C> 2016-11-09  J. ATOR    -- ADDED IRET ARGUMENT AND CHECK FOR POSSIBLY
 C>                           CORRUPT SUBSETS
+C> 2022-05-06  J. WOOLLEN -- REPLACE UPBB WITH UPB8 FOR 8BYTE INTEGERS 
 C>
 C> USAGE:    CALL RDTREE (LUN,IRET)
 C>   INPUT ARGUMENT LIST:
@@ -48,7 +49,7 @@ C>                      -1 = AN ERROR OCCURRED, POSSIBLY DUE TO A
 C>                           CORRUPT SUBSET IN THE INPUT MESSAGE
 C>
 C> REMARKS:
-C>    THIS ROUTINE CALLS:        RCSTPL   ICBFMS   UPBB     UPC
+C>    THIS ROUTINE CALLS:        RCSTPL   ICBFMS   UPB8     UPC
 C>                               UPS
 C>    THIS ROUTINE IS CALLED BY: READSB
 C>                               Normally not called by any application

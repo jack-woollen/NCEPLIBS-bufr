@@ -32,6 +32,7 @@ C> 2004-08-09  J. ATOR    -- MAXIMUM MESSAGE LENGTH INCREASED FROM
 C>                           20,000 TO 50,000 BYTES
 C> 2012-03-02  J. ATOR    -- USE FUNCTION UPS
 C> 2014-12-10  J. ATOR    -- USE MODULES INSTEAD OF COMMON BLOCKS
+C> 2022-05-06  J. WOOLLEN -- REPLACE UPBB WITH UPB8 FOR 8BYTE INTEGERS
 C>
 C> USAGE:    CALL UFBGET (LUNIT, TAB, I1, IRET, STR)
 C>   INPUT ARGUMENT LIST:
@@ -61,7 +62,7 @@ C>                           message
 C>
 C> REMARKS:
 C>    THIS ROUTINE CALLS:        BORT     INVWIN   STATUS   STRING
-C>                               UPBB     UPC      UPS      USRTPL
+C>                               UPB8     UPC      UPS      USRTPL
 C>    THIS ROUTINE IS CALLED BY: None
 C>                               Normally called only by application
 C>                               programs.

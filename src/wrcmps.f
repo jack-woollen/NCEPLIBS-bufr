@@ -61,6 +61,7 @@ C> 2016-03-18  J. ATOR    -- FIX BUG INVOLVING ENCODING OF LONG CHARACTER
 C>                           STRINGS (VIA WRITLC) INTO MESSAGES WHICH
 C>                           ALSO CONTAIN DELAYED REPLICATION SEQUENCES
 C> 2021-02-24  J. ATOR    -- USE IPKM AND PKC INSTEAD OF PKX
+C> 2022-05-06  J. WOOLLEN -- USE PKB8 FOR PACKING 8BYTE INTEGERS 
 C>
 C> USAGE:    CALL WRCMPS (LUNIX)
 C>   INPUT ARGUMENT LIST:
@@ -72,7 +73,7 @@ C> REMARKS:
 C>    THIS ROUTINE CALLS:        BORT     CMSGINI  IUPBS01  MSGFULL
 C>                               MSGWRT   PKB      PKC      PKX
 C>                               STATUS   UPB      UPC      USRTPL
-C>    THIS ROUTINE IS CALLED BY: CLOSMG   WRITSA   WRITSB
+C>    THIS ROUTINE IS CALLED BY: CLOSMG   WRITSA   WRITSB   PKB8
 C>                               Normally not called by any application
 C>                               programs.
 C>

@@ -76,6 +76,7 @@ C> | 2012-09-15 | J. Woollen | Modified for C/I/O/BUFR interface; added IO type 
 C> | 2014-11-20 | J. Ator    | Ensure openbf() has been called at least once before calling status() |
 C> | 2014-12-10 | J. Ator    | Use modules instead of COMMON blocks |
 C> | 2016-12-19 | J. Woollen | Fix bug to prevent inventory overflow |
+C> | 2022-05-06 | J. Woollen | Use up8 and upb8 for 8byte integers, add int statement function, and add msgunp=1 option 
 C>
       SUBROUTINE UFBTAB(LUNIN,TAB,I1,I2,IRET,STR)
 

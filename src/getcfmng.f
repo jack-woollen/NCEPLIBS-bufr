@@ -199,14 +199,18 @@ C*	came from within Section 3.
 	    IF ( ( TABB ( N, LUN )(71:74) .NE. 'CODE' ) .AND.
      .		 ( TABB ( N, LUN )(71:74) .NE. 'FLAG' ) ) GOTO 905
 	    IF ( NEMOD(1:1) .NE. ' ' ) THEN
-		CALL PARSTR ( NEMOD, NEMO, 1, NTG, ' ', .TRUE. )
-		CALL NEMTAB ( LUN, NEMO, IFXYD(1), TAB, N )
-		IF ( ( N .EQ. 0 ) .OR. ( TAB .NE. 'B' ) ) GOTO 904
-		IF ( ( TABB ( N, LUN )(71:74) .NE. 'CODE' ) .AND.
-     .		     ( TABB ( N, LUN )(71:74) .NE. 'FLAG' ) ) GOTO 905
+	       IF ( NEMOD(1:4) .EQ. 'NCNW' ) THEN
+	          IFXYD(1) = IFXY ( '001225' )
+               ELSE
+		  CALL PARSTR ( NEMOD, NEMO, 1, NTG, ' ', .TRUE. )
+		  CALL NEMTAB ( LUN, NEMO, IFXYD(1), TAB, N )
+		  IF ( ( N .EQ. 0 ) .OR. ( TAB .NE. 'B' ) ) GOTO 904
+		  IF ( ( TABB ( N, LUN )(71:74) .NE. 'CODE' ) .AND.
+     .		       ( TABB ( N, LUN )(71:74) .NE. 'FLAG' ) ) GOTO 905
+	       END IF
 	    ELSE
-	        IFXYD(1) = (-1)
-	    END IF
+	       IFXYD(1) = (-1)
+            END IF 
 	END IF
 
 C*	Search the internal table for the requested meaning.
